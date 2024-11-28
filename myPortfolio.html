@@ -11,191 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Boostrap Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>My Portfolio</title>
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        body.dark-mode {
-            background-color: black;
-            color: white;
-        }
-
-        body.dark-mode .title {
-            color: black;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-        }
-
-        input:checked + .slider {
-            background-color:black;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-
-        @keyframes fillBar {
-            from {
-              width: 0;
-            }
-            to {
-                width: var(--target-width);
-            }
-          }
-        .progress-bar {
-            animation: fillBar 8s ease-in-out forwards;
-            width: 0; 
-        }
-        /* Pop-in animation */
-        @keyframes popIn {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.7;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .project-item {
-            animation: popIn 10s ease forwards; /* Trigger animation */
-            opacity: 0; /* Ensure it's hidden initially */
-        }
-
-        /* Delay animation for each card */
-        .project-item:nth-child(1) { animation-delay: 1s; }
-        .project-item:nth-child(2) { animation-delay: 1s; }
-        .project-item:nth-child(3) { animation-delay: 1s; }
-
-
-        /* Animation for sliding in from the right */
-        @keyframes slideInFromRight {
-            0% {
-                transform: translateX(100%); /* Start off the screen to the right */
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0); /* Move to its final position */
-                opacity: 1;
-            }
-        }
-
-        /* Animation for sliding in from the left */
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%); /* Start off the screen to the left */
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0); /* Move to its final position */
-                opacity: 1;
-            }
-        }
-
-        /* Apply the animation to the image */
-        .image-slide-in {
-            animation: slideInFromRight 2s ease-out forwards;
-        }
-
-        /* Apply the animation to the text */
-        .text-slide-in {
-            animation: slideInFromLeft 2s ease-out forwards;
-            animation-delay: 0.5s; /* Delay the text animation slightly */
-        }
-
-        /* Container for the image */
-        .image-container {
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Image styling */
-        .image-container img {
-            width: 100%;
-            height: 250px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* The overlay div that will appear on hover */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-            color: white;
-            opacity: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        /* Hover effect for the image container */
-        .image-container:hover .overlay {
-            opacity: 1; /* Show the overlay when the image is hovered */
-        }
-
-        /* Optional: Scale the image slightly on hover */
-        .image-container:hover img {
-            transform: scale(1.05); /* Slight zoom effect */
-        }
-
-
-    </style>
 </head>
 
 <body id="content">
@@ -245,7 +62,7 @@
             <div class="row min-vh-75 align-items-center align-content-center">
                 <div class="col-md-6 image-slide-in">
                     <div class="text-center">
-                        <img src="img/zuezue.jpg" width="350px" height="350px" class="rounded-circle shadow-sm mt-5" alt="">
+                        <img src="images/zuezue.jpg" width="350px" height="350px" class="rounded-circle shadow-sm mt-5" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 order-md-first text-slide-in">
@@ -466,7 +283,7 @@
             <div class="row text-center ">
                 <div class="col-md-6 col-lg-4 mb-3 ">
                     <div class="image-container">
-                        <img src="img/sushiya.png" class="w-100 img-thumbnail shadow-sm" style="height:250px;" alt="">
+                        <img src="images/sushiya.png" class="w-100 img-thumbnail shadow-sm" style="height:250px;" alt="">
                         <div class="overlay">
                             <p>Built with HTML, CSS, and JavaScript, showcasing a stylish design for a sushi restaurant with responsive layouts and interactive elements.<br><br>
                                 <a href="https://github.com/zuezuemaung310/sushiya"><i class="fa-solid fa-laptop-code fa-lg text-white"></i></a>
@@ -477,7 +294,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3 ">
                     <div class="image-container">
-                        <img src="img/student.png" class="w-100 img-thumbnail shadow-sm " style="height:250px; " alt=" ">
+                        <img src="images/student.png" class="w-100 img-thumbnail shadow-sm " style="height:250px; " alt=" ">
                         <div class="overlay">
                             <p>Built with PHP, Laravel, and MySQL, it manages users, resources, secure logins, thesis PDF downloads, and user search. <br><br>
                                 <a href="https://github.com/zuezuemaung310/student_management_project"><i class="fa-solid fa-laptop-code fa-lg text-white"></i></a>
@@ -488,7 +305,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-3 ">
                     <div class="image-container">
-                        <img src="img/book.png" class="w-100 img-thumbnail shadow-sm " style="height:250px; " alt=" ">
+                        <img src="images/book.png" class="w-100 img-thumbnail shadow-sm " style="height:250px; " alt=" ">
                         <div class="overlay">
                             <p>Built with Spring Boot, Thymeleaf, and MySQL , it provides secure login logout and CRUD operations for managing books efficiently.<br><br>
                                 <a href="https://github.com/zuezuemaung310/book-store-project"><i class="fa-solid fa-laptop-code fa-lg text-white"></i></a>    
@@ -609,22 +426,7 @@
     </div>
     <!-- footer end -->
 </body>
-<script>
-    document.getElementById('dark-mode-toggle').addEventListener('change', function() {
-    document.body.classList.toggle('dark-mode', this.checked);
-});
-    
-
-    window.onload = function () {
-    const progressBars = document.querySelectorAll('.progress-bar');
-  
-    progressBars.forEach((bar) => {
-      const targetWidth = bar.getAttribute('aria-valuenow'); 
-      bar.style.setProperty('--target-width', `${targetWidth}%`); 
-    });
-  };
-</script>
-
+<script class="js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
